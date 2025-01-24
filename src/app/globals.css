@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 179 100% 95%;
+    --foreground: 179 5% 6%;
+    --card: 179 50% 90%;
+    --card-foreground: 179 5% 10%;
+    --popover: 179 100% 95%;
+    --popover-foreground: 179 100% 6%;
+    --primary: 179 29% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 179 30% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 141 30% 85%;
+    --muted-foreground: 179 5% 35%;
+    --accent: 141 30% 80%;
+    --accent-foreground: 179 5% 10%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 179 5% 90%;
+    --border: 179 30% 50%;
+    --input: 179 30% 18%;
+    --ring: 179 29% 54%;
+    --radius: 0.3rem;
+  }
+
+  .dark {
+    --background: 179 50% 6%;
+    --foreground: 179 5% 90%;
+    --card: 179 50% 6%;
+    --card-foreground: 179 5% 90%;
+    --popover: 179 50% 5%;
+    --popover-foreground: 179 5% 90%;
+    --primary: 179 29% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 179 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 141 30% 15%;
+    --muted-foreground: 179 5% 60%;
+    --accent: 141 30% 15%;
+    --accent-foreground: 179 5% 90%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 179 5% 90%;
+    --border: 179 30% 18%;
+    --input: 179 30% 18%;
+    --ring: 179 29% 54%;
+    --radius: 0.3rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-200px) scale(1);
+    opacity: 0;
+  }
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.leaflet-container {
+  background-color: hsl(var(--background));
+  z-index: 10;
+}
+
+.leaflet-popup {
+  z-index: 20;
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  z-index: 25;
+}
+
+.leaflet-popup-tip {
+  display: none !important;
+}
+
+.leaflet-popup-close-button {
+  width: 24px !important;
+  height: 24px !important;
+  color: hsl(var(--muted-foreground)) !important;
+  margin: 4px !important;
+  font-size: 20px !important;
+  background: hsl(var(--background)) !important;
+  border-radius: 4px !important;
+  border: 1px solid hsl(var(--border)) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-popup-close-button:hover {
+  background: hsl(var(--accent)) !important;
+  color: hsl(var(--accent-foreground)) !important;
+}
+
+.dark-theme-popup .leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.dark-theme-popup .leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+  min-width: 240px !important;
+  max-width: calc(100vw - 2rem) !important;
+}
+
+@media (min-width: 640px) {
+  .dark-theme-popup .leaflet-popup-content {
+    min-width: 300px !important;
+  }
+}
+
+.dark-theme-popup .leaflet-popup-tip {
+  display: none !important;
+}
+
+.dark-theme-popup .leaflet-popup-close-button {
+  width: 22px !important;
+  height: 22px !important;
+  margin: 3px !important;
+  padding: 0 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  color: hsl(var(--muted-foreground)) !important;
+  background: hsl(var(--background)) !important;
+  border-radius: 4px !important;
+  border: 1px solid hsl(var(--border)) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  z-index: 10 !important;
+  opacity: 0.8 !important;
+}
+
+.dark-theme-popup .leaflet-popup-close-button:hover {
+  background: hsl(var(--accent)) !important;
+  color: hsl(var(--accent-foreground)) !important;
+  opacity: 1 !important;
+}
+
+@media (min-width: 640px) {
+  .dark-theme-popup .leaflet-popup-close-button {
+    width: 24px !important;
+    height: 24px !important;
+    margin: 4px !important;
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+}
+
+.custom-marker-container {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.marker-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center bottom;
+}
+
+.custom-marker-container:hover .marker-icon {
+  transform: scale(1.2) translateY(-5px);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+.marker-icon.featured::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.marker-icon.featured::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
