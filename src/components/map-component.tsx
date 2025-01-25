@@ -1,7 +1,7 @@
 "use client"
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import * as L from 'leaflet';
+import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Building2, Wallet, Landmark, Bus, MapPin } from 'lucide-react'
 import type { Site } from './municipal-sites'
