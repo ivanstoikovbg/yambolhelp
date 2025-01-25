@@ -65,7 +65,7 @@ const sites: Site[] = [
     title: "ПМГ Атанас Радев (Спонсор)",
     description: "Официален уеб сайт на ПМГ Атанас Радев",
     icon: <School className="w-6 h-6" />,
-    url: "https://mgyambol.bg/",
+    url: "https://mgyambol.com/",
     category: "Образование",
     featured: true,
   }
