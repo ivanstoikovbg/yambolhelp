@@ -43,7 +43,7 @@ const createMarkerIcon = (category: string) => {
     Icon: MapPin
   }
   
-  const { color, Icon } = config
+  const { color } = config
   
   const div = document.createElement('div')
   div.className = 'custom-marker-container'

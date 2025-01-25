@@ -14,12 +14,12 @@ const MapComponent = dynamic(() => import('./map-component'), {
   )
 })
 
-interface Site {
+export interface Site {
   title: string
-  description: string
-  icon: React.ReactNode
   url: string
   category: string
+  description: string
+  icon: React.ReactNode
   featured?: boolean
   location?: {
     lat: number
