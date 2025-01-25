@@ -1,18 +1,10 @@
 "use client"
 
-import { Building2, ExternalLink, Bus, Wind, Volleyball, Droplet, Map, Search } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { Building2, ExternalLink, Bus, Wind, Volleyball, Droplet, Search } from "lucide-react"
+import { motion } from "framer-motion"
 import { useState } from "react"
-import dynamic from 'next/dynamic'
 
-const MapComponent = dynamic(() => import('./map-component'), { 
-  ssr: false,
-  loading: () => (
-    <div className="h-[600px] w-full flex items-center justify-center bg-white/5 rounded-2xl">
-      <div className="animate-pulse">Зареждане на картата...</div>
-    </div>
-  )
-})
+
 
 export interface Site {
   title: string
@@ -122,8 +114,7 @@ function SiteCard({ site, index }: { site: Site, index: number }) {
 export function MunicipalSites() {
   const [selectedCategory, setSelectedCategory] = useState("Всички")
   const [searchQuery, setSearchQuery] = useState("")
-  const [view, setView] = useState<"grid" | "map">("grid")
-
+  
   const filteredSites = sites.filter(site => {
     const matchesCategory = selectedCategory === "Всички" ? true : site.category === selectedCategory
     const matchesSearch = site.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -165,17 +156,6 @@ export function MunicipalSites() {
               />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--muted-foreground))]" />
             </div>
-            <button
-              onClick={() => setView(view === "grid" ? "map" : "grid")}
-              className={`px-4 py-2 rounded-xl transition-all duration-300 flex items-center gap-2 ${
-                view === "map" 
-                  ? "bg-[hsl(var(--primary))] text-white" 
-                  : "bg-white/5 hover:bg-white/10"
-              }`}
-            >
-              <Map className="w-4 h-4" />
-              <span>{view === "grid" ? "Покажи карта" : "Покажи списък"}</span>
-            </button>
           </div>
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
@@ -192,20 +172,14 @@ export function MunicipalSites() {
               </button>
             ))}
           </div>
-          <AnimatePresence mode="wait">
-            {view === "grid" ? (
-              <motion.div 
-                layout
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-              >
-                {filteredSites.map((site, index) => (
-                  <SiteCard key={site.url} site={site} index={index} />
-                ))}
-              </motion.div>
-            ) : (
-              <MapComponent sites={filteredSites} />
-            )}
-          </AnimatePresence>
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {filteredSites.map((site, index) => (
+              <SiteCard key={site.url} site={site} index={index} />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

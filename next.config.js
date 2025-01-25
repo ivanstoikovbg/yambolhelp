@@ -12,8 +12,16 @@ const nextConfig = {
       ...config.resolve.fallback,
       fs: false,
     };
+    
+    // Добавяме специфична конфигурация за Leaflet
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'leaflet': require.resolve('leaflet'),
+    };
+    
     return config;
   },
+  transpilePackages: ['react-leaflet', 'leaflet']
 }
 
 module.exports = nextConfig 
