@@ -1,6 +1,6 @@
 "use client"
 
-import { Building2, ExternalLink, Bus, Wind, Volleyball, Droplet, Search } from "lucide-react"
+import { Building2, ExternalLink, Bus, Wind, Volleyball, Droplet, Search, School } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 
@@ -59,6 +59,14 @@ const sites: Site[] = [
     icon: <Bus className="w-6 h-6" />,
     url: "https://transport.yambol.bg/",
     category: "Транспорт",
+    featured: true,
+  },
+  {
+    title: "ПМГ Атанас Радев (Спонсор)",
+    description: "Официален уеб сайт на ПМГ Атанас Радев",
+    icon: <School className="w-6 h-6" />,
+    url: "https://mgyambol.bg/",
+    category: "Образование",
     featured: true,
   }
 ]

@@ -170,9 +170,9 @@ export function HeroSection() {
               </motion.h1>
             </div>
             <p className="text-xl text-[hsl(var(--muted-foreground))] mb-6 leading-relaxed max-w-3xl mx-auto">
-              Вашият единен портал към всички общински услуги и информация. 
+              Вашият единен портал към всички общински сайтове. 
               <span className="block mt-2 text-[hsl(var(--foreground))] font-medium">
-                Бърз и лесен достъп до електронни услуги на едно място.
+                Бърз и лесен достъп до всички общински сайтове.
               </span>
             </p>
             <motion.div

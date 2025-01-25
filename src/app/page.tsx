@@ -12,7 +12,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-[hsl(var(--border))] bg-[hsl(var(--card))] backdrop-blur-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-[hsl(var(--foreground))]">
-          Общински сайтове - Ямбол
+          Yambol Help
         </h1>
         <ThemeToggle />
       </div>

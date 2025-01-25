@@ -27,8 +27,8 @@ export function Footer() {
               Yambol Help
             </Link>
             <p className="mt-4 text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
-              Вашият дигитален портал към всички общински услуги и информация. 
-              Предоставяме бърз и лесен достъп до електронни услуги и важна информация за града.
+              Вашият дигитален портал към всички общински сайтове. 
+              Предоставяме бърз и лесен достъп до всички общински сайтове.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
               <a
